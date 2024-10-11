@@ -1,0 +1,125 @@
+/* Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #121212;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Gradient Background */
+header {
+    background: linear-gradient(135deg, #0a0f1e, #222930, #001f3f, #5e5bff);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+header .container h1 {
+    font-size: 4rem;
+    color: #ffdd57; /* Yellow Tone */
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #50e3c2; /* Cool accent color */
+}
+
+.cta-button {
+    padding: 10px 20px;
+    background: #1f1c46;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: #ffdd57;
+    color: #121212;
+}
+
+.features-section {
+    background: linear-gradient(135deg, #001f3f, #050b1b, #5e5bff);
+    padding: 50px;
+    text-align: center;
+    position: relative;
+}
+
+.features-section h2 {
+    font-size: 3rem;
+    color: #ffdd57;
+    margin-bottom: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.feature-card {
+    background: #1f1c46;
+    padding: 30px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    border: 1px solid #ffdd57;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+}
+
+.feature-card h3 {
+    color: #ffdd57;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #dcdcdc;
+}
+
+.download-section {
+    padding: 50px;
+    text-align: center;
+    background: linear-gradient(135deg, #121212, #222930);
+}
+
+.download-section h2 {
+    color: #ffdd57;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.download-section code {
+    display: inline-block;
+    padding: 15px;
+    background: #050b1b;
+    color: #50e3c2;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: 1px solid #ffdd57;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #050b1b;
+    color: #dcdcdc;
+}
