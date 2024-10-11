@@ -1,15 +1,15 @@
+use std::io::{self, Write, Read};
+use std::fs::File;
 use colored::*;
-use std::io::{self, Write};
-use std::process::{Command, Stdio};
 
 // Enum to represent different functionalities of Partermai
 enum ToolMode {
     Shell,
-    // Add more modes here in the future
 }
 
+// Function for starting the Partermai shell
 fn main() {
-    println!("{}", "Welcome to Partermai v1 ⚡".green().bold());
+    println!("{}", "Welcome to Partermai: The Multifunction Tool".green().bold());
 
     // Tool selection - right now, it starts with the shell by default.
     let mode = ToolMode::Shell;
@@ -43,28 +43,71 @@ fn start_shell() {
             continue; // Skip empty inputs
         }
 
-        // Execute the input as a system command
-        match execute_command(input) {
-            Ok(output) => println!("{}", output.green()), // Successful output in green
-            Err(e) => eprintln!("{}", e.red()), // Errors in red
+        // Check for the built-in command `partermcli`
+        if input.starts_with("partermcli") {
+            handle_partermcli(input);
+            continue;
         }
+
+        // Other command handling (if any)
     }
 }
 
-// Helper function to execute shell commands
-fn execute_command(command: &str) -> Result<String, String> {
-    let parts: Vec<&str> = command.split_whitespace().collect();
+// Function to handle the `partermcli` built-in command
+fn handle_partermcli(input: &str) {
+    let args: Vec<&str> = input.split_whitespace().collect();
 
-    let output = Command::new(parts[0])
-        .args(&parts[1..])
-        .stdout(Stdio::piped())
-        .stderr(Stdio::piped())
-        .output()
-        .map_err(|e| format!("Failed to execute command: {}", e))?;
-
-    if output.status.success() {
-        Ok(String::from_utf8_lossy(&output.stdout).to_string())
+    if args.len() > 1 {
+        match args[1] {
+            "+help" => {
+                println!("{}", "Partermai CLI Help:".yellow().bold());
+                println!("{}", "+help    - Displays help information".green());
+                println!("{}", "+edit    - Opens the text editor".green());
+                println!("{}", "+version - Shows modules versions".green());
+            },
+            "+edit" => {
+                start_text_editor();
+            },
+            "+version" => {
+                println!("{}", "Partermai Alpha version 0.1.0-1".bold());
+            },
+            _ => {
+                println!("{}", "Unknown partermcli command. Use +help for available options.".red());
+            }
+        }
     } else {
-        Err(String::from_utf8_lossy(&output.stderr).to_string())
+        println!("{}", "partermcli: Missing argument. Use +help for available options.".red());
+    }
+}
+
+// Simple text editor function
+fn start_text_editor() {
+    println!("{}", "Entering PartermEdit (CTRL + D to save and quit)...".yellow());
+
+    let mut buffer = String::new();
+    let stdin = io::stdin();
+
+    loop {
+        let mut input = String::new();
+        match stdin.read_line(&mut input) {
+            Ok(0) => break, // Break on CTRL + D
+            Ok(_) => buffer.push_str(&input),
+            Err(error) => println!("Error reading input: {}", error),
+        }
+    }
+
+    // Prompt the user to save the file
+    println!("{}", "Save as: ".yellow().bold());
+    let mut filename = String::new();
+    io::stdin().read_line(&mut filename).expect("Failed to read filename");
+    let filename = filename.trim();
+
+    // Save the buffer to the specified file
+    match File::create(filename) {
+        Ok(mut file) => {
+            file.write_all(buffer.as_bytes()).expect("Failed to write to file");
+            println!("{}", "File saved successfully.".green().bold());
+        },
+        Err(e) => println!("{}", format!("Failed to create file: {}", e).red().bold()),
     }
 }
