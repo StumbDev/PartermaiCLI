@@ -1,6 +1,6 @@
 [package]
 name = "Partermai"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 
 [dependencies]
@@ -8,4 +8,5 @@ clap = "4.5.20"
 colored = "2.1.0"
 reqwest = "0.12.8"
 serde = "1.0.210"
+syntect = "5.2.0"
 tokio = "1.40.0"
