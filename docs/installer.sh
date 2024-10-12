@@ -13,7 +13,7 @@ check_rust_install() {
 # Function to build the Partermai binary
 build_partermai() {
   echo "Cloning Partermai repository..."
-  git clone https://github.com/your-username/partermai.git
+  git clone https://github.com/StumbDev/PartermaiCLI.git
   cd partermai
 
   echo "Building Partermai..."
