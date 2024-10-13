@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  rust-app:
+    build: .
+    ports:
+      - "8080:8080" # Replace 8080 with your application's port
+    volumes:
+      - ./:/app
