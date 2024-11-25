@@ -9,7 +9,7 @@
 
 [![Rust](https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-0.1.1-blue.svg?style=for-the-badge)](https://github.com/yourusername/partermai)
+[![Version](https://img.shields.io/badge/version-0.1.1-blue.svg?style=for-the-badge)](https://github.com/stumbdev/partermaicli)
 
 </div>
 
