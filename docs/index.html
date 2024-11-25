@@ -3,51 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Partermai - Your All-in-One Tool</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Partermai - Your Cozy Command-Line Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body>
-    <header>
+    <div class="announcement-banner">
+        V2 is coming soon!
+    </div>
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="assets/logo.png" alt="Partermai" height="40">
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#docs">Documentation</a>
+                <a href="#install">Installation</a>
+                <a href="https://github.com/stumbdev/partermaicli">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header">
         <div class="container">
-            <h1>Partermai</h1>
-            <p>Your All-in-One Multifunction Tool</p>
-            <a href="#download" class="cta-button">Get Started</a>
+            <h1>🌟 Partermai CLI</h1>
+            <p>Your Cozy Command-Line Home with Integrated AI Assistant</p>
+            <div style="margin-top: 30px;">
+                <a href="#install" class="button">Get Started</a>
+            </div>
         </div>
     </header>
 
-    <section id="features" class="features-section">
-        <h2>Features</h2>
-        <div class="grid-container">
-            <div class="feature-card">
-                <h3>Powerful Shell</h3>
-                <p>A versatile shell with built-in commands for ultimate flexibility.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Code Editor</h3>
-                <p>Edit code directly in the terminal with ease, save and manage files.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Package Manager</h3>
-                <p>Install, update, and manage packages for your projects with ease.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Cross-Platform</h3>
-                <p>Works on Linux, Windows, and macOS with seamless integration.</p>
+    <section id="features" class="features">
+        <div class="container">
+            <h2>✨ Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🏠 Cozy Environment</h3>
+                    <p>Beautiful interface with syntax highlighting, smart prompt, and helpful tips.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🤖 Voia AI Assistant</h3>
+                    <p>Integrated AI powered by OpenAI. Multiple models support and conversation memory.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📂 Session Management</h3>
+                    <p>Create and switch between multiple sessions with persistent history.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🛠️ POSIX Commands</h3>
+                    <p>Familiar commands like ls, cd, pwd, and cat with modern improvements.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="download" class="download-section">
-        <h2>Download Partermai</h2>
-        <p>Install Partermai in a single command using curl.</p>
-        <code>curl -sSL https://stumbdev.github.io/PartermaiCLI/installer.sh | bash</code>
+    <section id="install" class="container">
+        <h2>🚀 Quick Start</h2>
+        <div class="code-block">
+            <pre>
+# Clone the repository
+git clone https://github.com/stumbdev/partermaicli.git
+cd partermaicli
+
+# Build and install
+cargo install --path .</pre>
+        </div>
+        <h3>Basic Usage</h3>
+        <div class="code-block">
+            <pre>
+# Start Partermai
+partermai
+
+# Create a new session
+partermai new mysession
+
+# Use Voia AI Assistant
+voia-setkey your-api-key
+voia hello world!</pre>
+        </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Partermai. All rights reserved.</p>
-    </footer>
+    <section id="docs" class="container">
+        <h2>📚 Documentation</h2>
+        <div class="docs-container">
+            <aside class="sidebar">
+                <ul>
+                    <li><a href="#installation">Installation</a></li>
+                    <li><a href="#basic-usage">Basic Usage</a></li>
+                    <li><a href="#sessions">Session Management</a></li>
+                    <li><a href="#voia">Voia AI Assistant</a></li>
+                    <li><a href="#commands">Command Reference</a></li>
+                    <li><a href="#customization">Customization</a></li>
+                    <li><a href="#contributing">Contributing</a></li>
+                </ul>
+            </aside>
+            <main class="content">
+                <section id="voia">
+                    <h3>🤖 Voia AI Assistant</h3>
+                    <p>Voia is your AI-powered command-line companion. It can help you with:</p>
+                    <ul>
+                        <li>Answering questions</li>
+                        <li>Explaining commands</li>
+                        <li>Providing code examples</li>
+                        <li>Offering suggestions</li>
+                    </ul>
+                    <div class="code-block">
+                        <pre>
+# Set your API key
+voia-setkey your-api-key-here
 
-    <script src="script.js"></script>
+# Choose AI model
+voia-model gpt-4
+
+# Ask anything
+voia explain how to use git rebase
+
+# Clear conversation
+voia-clear</pre>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                <h3>Partermai</h3>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#docs">Documentation</a></li>
+                    <li><a href="#install">Installation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="https://github.com/stumbdev/partermaicli">GitHub</a></li>
+                    <li><a href="https://github.com/stumbdev/partermaicli/issues">Issues</a></li>
+                    <li><a href="https://github.com/stumbdev/partermaicli/releases">Releases</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="https://github.com/stumbdev/partermaicli/discussions">Discussions</a></li>
+                    <li><a href="https://github.com/stumbdev/partermaicli/blob/main/CONTRIBUTING.md">Contributing</a></li>
+                    <li><a href="https://github.com/stumbdev/partermaicli/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container" style="text-align: center; margin-top: 40px;">
+            <p>Made with ❤️ by the Partermai Team</p>
+        </div>
+    </footer>
 </body>
 </html>

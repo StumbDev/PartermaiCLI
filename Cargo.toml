@@ -1,12 +1,18 @@
 [package]
 name = "Partermai"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 
 [dependencies]
-clap = "4.5.20"
+clap = "4.5.1"
 colored = "2.1.0"
-reqwest = "0.12.8"
-serde = "1.0.210"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
 syntect = "5.2.0"
-tokio = "1.40.0"
+tokio = { version = "1.36.0", features = ["full"] }
+chrono = "0.4.34"
+dirs = "5.0.1"
+rustyline = "12.0.0"
+rand = "0.8.5"
+reqwest = { version = "0.11", features = ["json"] }
+dotenv = "0.15"
