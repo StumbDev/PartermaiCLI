@@ -1,7 +1,7 @@
 # 🌟 Partermai CLI
 
 <div align="center">
-  <img src="docs/assets/logo.png" alt="Partermai Logo" width="200"/>
+  <img src="docs/assets/logo.svg" alt="Partermai Logo" width="200"/>
   <br>
   <strong>Your Cozy Command-Line Home</strong>
   <br>
